@@ -1,0 +1,10 @@
+
+POST http://localhost:8080/task HTTP/1.1
+content-type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMTEzMmU3LWI5NWMtNDE0Ny1hNzMzLTJkODE5YzdkNWQ0YSIsIm5hbWUiOiJHYWJyaWVsIiwidXNlcm5hbWUiOiJnYWJyaWVsIiwiaWF0IjoxNzEyNTQ5OTExLCJleHAiOjE3MTI1NTM1MTF9.EEokZq2yztmJWPxZM5xXEWgb3CXJplKE6v-Pz8MEY38
+
+{
+    "title": "teste2",
+    "task": "teste2",
+    "author": "gabriel"
+}

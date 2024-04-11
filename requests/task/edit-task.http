@@ -1,0 +1,10 @@
+
+PUT http://localhost:8080/task/615917f5-d889-4cfb-a21f-1b077a48ec46 HTTP/1.1
+content-type: application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMTEzMmU3LWI5NWMtNDE0Ny1hNzMzLTJkODE5YzdkNWQ0YSIsIm5hbWUiOiJHYWJyaWVsIiwidXNlcm5hbWUiOiJnYWJyaWVsIiwiaWF0IjoxNzEyNzE5NDkyLCJleHAiOjE3MTI3MjMwOTJ9.wwVLH3gkGz0_1nzEkdfsMH88pvKm1qiuYqdJiruLkN8
+
+{
+    "title": "testei",
+    "task": "gabrielcampoos",
+    "criadoPor": "gabrielcampoos"
+}

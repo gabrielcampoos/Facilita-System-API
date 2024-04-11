@@ -1,0 +1,63 @@
+version: "3"
+
+services:
+
+  app:
+    build:
+      context: .
+    container_name: facilita-system-app
+    ports:
+      - 8080:8080
+    volumes:
+      - ./:/app
+    networks:
+      - facilitasystem
+    env_file:
+      - .env.docker
+
+  db:
+    image: postgres:13
+    container_name: postgres-facilita-system
+    environment:
+      POSTGRES_PASSWORD: ga120597
+      POSTGRES_USER: gabriel
+      POSTGRES_DB: facilita_system
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    networks:
+      - facilitasystem
+
+  db_test:
+    image: postgres:13
+    container_name: postgres-facilita-system-test
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+    environment:
+      POSTGRES_PASSWORD: ga120597
+      POSTGRES_USER: gabriel
+      POSTGRES_DB: facilita_system_test
+    ports:
+      - 5433:5432
+    networks:
+      - facilitasystem
+
+  redis:
+    image: redis
+    container_name: cache_redis
+    command: redis-server --requirepass ga120597
+    ports:
+      - 6379:6379
+    networks:
+      - facilitasystem
+
+networks:
+  facilitasystem:
+    driver: bridge
+
+volumes:
+  postgres:
